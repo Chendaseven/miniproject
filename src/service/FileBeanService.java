@@ -24,4 +24,7 @@ public class FileBeanService {
 	public FileBean findByName(String name){
 		return dao.findByName(name);
 	}
+	public List<FileBean> findByType(String type){
+		return dao.findByType(type);
+	}
 }

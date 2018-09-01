@@ -34,22 +34,22 @@
         <h1><a href="">全部文件</a></h1>
       </div>
       <div class="picture">
-        <h1><a href="picture.html">图片</a></h1>
+        <h1><a href="${pageContext.request.contextPath }/searchimage">图片</a></h1>
       </div>
       <div class="flonder">
-        <h1><a href="#">文档</a></h1>
+        <h1><a href="${pageContext.request.contextPath }/searchTxt">文档</a></h1>
       </div>
       <div class="video">
-        <h1><a href="#">视频</a></h1>
+        <h1><a href="${pageContext.request.contextPath }/searchVideo">视频</a></h1>
       </div>
       <div class="music" >
-        <h1><a href="#">视频</a></h1>
+        <h1><a href="#">音乐</a></h1>
       </div>
       <div class="other">
-        <h1><a href="#">视频</a></h1>
+        <h1><a href="#">其他</a></h1>
       </div>
     </div>
-    <div class="main-content">
+    <div class="main-content" style="overflow:auto;">
       <table border="1" width="700px">
       <tr>
         <th>编号</th>
@@ -80,7 +80,7 @@
         <a href="upload.jsp">上传</a></li>
       <li>
         
-          <a href="download.html">下载</a></li>
+          <a href="index.jsp">分片上传</a></li>
       
       
     </ul>

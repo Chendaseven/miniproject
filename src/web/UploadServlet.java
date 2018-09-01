@@ -46,8 +46,8 @@ public class UploadServlet extends HttpServlet {
 			
 			FileBeanService service = new FileBeanService();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-			
 			List<FileBean> fileList = new ArrayList<FileBean>();
+			
 			if(list!=null){
 				FileBean bean = null;
 				//遍历每个文件
@@ -92,11 +92,11 @@ public class UploadServlet extends HttpServlet {
 						 */
 						String sizeStr = "";
 						if(size>=1024 && size<1024*1024){
-							sizeStr = (size/1024.0)+"KB";
+							sizeStr = (size/1024)+"KB";
 						}else if(size>1024*1024 && size<=1024*1024*1024){
-							sizeStr = (size/(1024*1024.0))+"MB";
+							sizeStr = (size/(1024*1024))+"MB";
 						}else if(size >= 1024*1024*1024){
-							sizeStr = (size/(1024*1024.0*1024))+"GB";
+							sizeStr = (size/(1024*1024*1024))+"GB";
 						}else{
 							sizeStr = size+"B";
 						}

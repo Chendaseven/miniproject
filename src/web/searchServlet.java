@@ -19,15 +19,17 @@ public class searchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		FileBeanService service = new FileBeanService();
-		String strname = request.getParameter("sename");
+		//String strname = request.getParameter("sename");
 		//int id = Integer.parseInt(strname);
-		//strname = "\'"+strname+"\'";
-		
-		FileBean bean = service.findByName(strname);
+
+		String strname = new String(request.getParameter("sename").getBytes("ISO-8859-1"),"utf-8");
+		System.out.println(strname);
+		FileBean bean = service.findByName(strname+"%");
 		//FileBean bean = service.findById(id);
 		
-		System.out.println(bean.getFile_path());
+		//System.out.println(bean.getFile_path());
 		request.setAttribute("bean", bean);
 		request.getRequestDispatcher("/search.jsp").forward(request, response);
 		

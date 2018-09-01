@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>minipro</display-name>
+  <servlet>
+    <servlet-name>springDispatcherServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath*:viewSpace.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>springDispatcherServlet</servlet-name>
+    <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -48,5 +64,75 @@
   <servlet-mapping>
     <servlet-name>searchServlet</servlet-name>
     <url-pattern>/searchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchimage</display-name>
+    <servlet-name>searchimage</servlet-name>
+    <servlet-class>web.searchimage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchimage</servlet-name>
+    <url-pattern>/searchimage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchTxt</display-name>
+    <servlet-name>searchTxt</servlet-name>
+    <servlet-class>web.searchTxt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchTxt</servlet-name>
+    <url-pattern>/searchTxt</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>searchVideo</display-name>
+    <servlet-name>searchVideo</servlet-name>
+    <servlet-class>web.searchVideo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchVideo</servlet-name>
+    <url-pattern>/searchVideo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Dis_upload</display-name>
+    <servlet-name>Dis_upload</servlet-name>
+    <servlet-class>Dispatch.Dis_upload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dis_upload</servlet-name>
+    <url-pattern>/Dis_upload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>uploadsuccess</display-name>
+    <servlet-name>uploadsuccess</servlet-name>
+    <servlet-class>Dispatch.uploadsuccess</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>uploadsuccess</servlet-name>
+    <url-pattern>/uploadsuccess</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadSuccessServlet</display-name>
+    <servlet-name>UploadSuccessServlet</servlet-name>
+    <servlet-class>Dispatch.UploadSuccessServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadSuccessServlet</servlet-name>
+    <url-pattern>/UploadSuccessServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadVideoServlet</display-name>
+    <servlet-name>UploadVideoServlet</servlet-name>
+    <servlet-class>Dispatch.UploadVideoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadVideoServlet</servlet-name>
+    <url-pattern>/UploadVideoServlet</url-pattern>
   </servlet-mapping>
 </web-app>

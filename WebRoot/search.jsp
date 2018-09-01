@@ -31,22 +31,22 @@
       <div id="active" class="allfiles">
         <!-- <i class="iconfont">&#x33;</i> -->
 
-        <h1><a href="">全部文件</a></h1>
+        <h1><a href="${pageContext.request.contextPath }/ListFileServlet">全部文件</a></h1>
       </div>
       <div class="picture">
-        <h1><a href="picture.html">图片</a></h1>
+        <h1><a href="${pageContext.request.contextPath }/searchimage">图片</a></h1>
       </div>
       <div class="flonder">
-        <h1><a href="#">文档</a></h1>
+        <h1><a href="${pageContext.request.contextPath }/searchTxt">文档</a></h1>
       </div>
       <div class="video">
-        <h1><a href="#">视频</a></h1>
+        <h1><a href="${pageContext.request.contextPath }/searchVideo">视频</a></h1>
       </div>
       <div class="music" >
-        <h1><a href="#">视频</a></h1>
+        <h1><a href="#">音乐</a></h1>
       </div>
       <div class="other">
-        <h1><a href="#">视频</a></h1>
+        <h1><a href="#">其他</a></h1>
       </div>
     </div>
     <div class="main-content">

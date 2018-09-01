@@ -54,7 +54,7 @@ public class FileBeanDao {
 	public FileBean findByName(String name){
 		try {
 			QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
-			return (FileBean)qr.query("select * from file_list where name=?", 
+			return (FileBean)qr.query("select * from file_list where name like ?", 
 									new BeanHandler(FileBean.class), 
 									new Object[]{name});
 		} catch (SQLException e) {
@@ -62,6 +62,21 @@ public class FileBeanDao {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	
+	//根据文件类型查询文件
+	public List<FileBean> findByType(String type){
+		try {
+			QueryRunner qr = new QueryRunner(JdbcUtil.getDataSource());
+			return (List<FileBean>)qr.query("select * from file_list where type like ?", 
+									new BeanListHandler(FileBean.class), 
+									new Object[]{type});
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+	
 	
 	
 	/**
