@@ -20,7 +20,7 @@ public class searchVideo extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FileBeanService service = new FileBeanService();
 
-		List<FileBean> list = service.findByType("video%");
+		List<FileBean> list = service.findByType("%mp4%");
 		
 		//System.out.println(bean.getFile_path());
 		request.setAttribute("list", list);

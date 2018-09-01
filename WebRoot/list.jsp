@@ -14,7 +14,7 @@
         <h1>Severs</h1>
       </div>
       <div class="search">
-         <form id="target" action="${pageContext.request.contextPath }/searchServlet" method="post">
+         <form id="target" action="${pageContext.request.contextPath }/ListFileServlet" method="post">
             <input id="client" type="text" placeholder="请输入您要搜索的内容..." name="sename"><br>
           	<!--  <input type="text" name="sename"><br>-->
            <input id="host" type="submit" value="搜索">

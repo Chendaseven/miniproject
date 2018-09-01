@@ -84,8 +84,9 @@ public class UploadServlet extends HttpServlet {
 						
 						//2)把文件信息保存到数据库中
 						//2.1 封装FileBean对象
-						
-						bean.setName(fileName);
+						//只取出文件名，去除格式名
+						String str = fileName.substring(0, fileName.indexOf("."));
+						bean.setName(str);
 						//计算文件大小
 						/**
 						 *  e.g.   1024b=1KB  1024*1024b=1MB

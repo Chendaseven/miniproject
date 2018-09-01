@@ -69,11 +69,13 @@ public class UploadSuccessServlet extends HttpServlet {
 			return;
 		}
 		//new File("H://upload"+"//"+guid).mkdirs();  取消guid
-		new File("H://upload").mkdirs();
+		//new File("H://upload").mkdirs();
 		/**
 		 * 进行文件合并
 		 */
-		File newFile = new File("H://upload"+"//"+fileName);
+		//File newFile = new File("H://upload"+"//"+fileName);
+		//将文件存储在项目upload中
+		File newFile = new File(path+"/"+fileName);
 		FileOutputStream outputStream = new FileOutputStream(newFile, true);//文件追加写入
 		
 		byte[] byt = new byte[10*1024*1024];
@@ -93,12 +95,16 @@ public class UploadSuccessServlet extends HttpServlet {
 		temp.close();
 		//追加删除临时分片文件deleteFile(file);
 		//将文件信息加到数据库中
-		bean.setName(fileName);
+		String str = fileName.substring(0, fileName.indexOf("."));
+		bean.setName(str);
+		//bean.setName(fileName);
 		String sizefinal=getFilesize(newFile);
 		bean.setSize(sizefinal);
 		bean.setType(fileName.substring(fileName.lastIndexOf(".")));
 		bean.setAddTime(sdf.format(new Date()));
-		bean.setFile_path(path+"//"+fileName);
+		//bean.setFile_path(path+"//"+fileName);
+		//bean.setFile_path("H://upload"+"//"+fileName);
+		bean.setFile_path("/upload"+"/"+fileName);
 		service.saveFile(bean);
 		
 		System.out.println("success!guid="+guid+";chunks="+chunks+";fileName="+fileName);

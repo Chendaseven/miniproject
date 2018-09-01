@@ -14,7 +14,7 @@
 <script type="text/javascript" src="admin/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
-	<h2 style="color:purple;">分片上传</h2>
+	<h2 style="color:purple;"><a href="${pageContext.request.contextPath }/ListFileServlet" style="text-decoratiion">首页</a></h2>
 	<div id="thelist" class="uploader-list"></div>
 	<div style="margin: 20px 20px 20px 0;">
 		<div id="picker" class="form-control-focus">选择文件</div>
